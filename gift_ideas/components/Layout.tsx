@@ -5,7 +5,7 @@ export default function Layout({title,children}){
     return(
         <>
             <Head>
-                <title>{title ? title + ' - Amazona' : 'giftIdeas'}</title>
+                <title>{title ? title + ' - giftIdeas' : 'GiftIdeas'}</title>
                 <meta name="description" content="Ecommerce Website" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -18,7 +18,7 @@ export default function Layout({title,children}){
                             <a
                             className='text-lg font-bold'
                             >
-                                Gifting Ideas
+                                GiftIdeas
                             </a>
                         </Link>
                         <div>
@@ -28,11 +28,15 @@ export default function Layout({title,children}){
                         </div>
                     </nav>
                 </header>
-                <main>
+                <main
+                className='container m-auto mt-4 px-4'
+                >
                 {children}
                 </main>
-                <footer>
-                    footer
+                <footer
+                className='flex h-10 justify-center items-center shadow-inner'
+                >
+                    copyright 2022 GiftIdeas
                 </footer>
             </div>
         </>
