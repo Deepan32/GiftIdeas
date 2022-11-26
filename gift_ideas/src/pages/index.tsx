@@ -6,6 +6,8 @@ import Layout from "../../components/Layout";
 import db from '../utils/db'
 import Product from '../models/Product'
 import ProductItem from '../../components/ProductItem'
+import {Model} from 'mongoose';
+
 const Home: NextPage = ({products}) => {
   const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
 
@@ -28,7 +30,7 @@ const Home: NextPage = ({products}) => {
 
 export async function getServerSideProps(){
   await db.connect;
-  const products=await Product.find().lean()
+  const products:Model<Product> = await Product.find().lean()
   return{
     props:{
       products,
