@@ -15,7 +15,9 @@ const Home: NextPage = () => {
              <ProductItem product={product} key={product.slug}></ProductItem> 
           ))}
         </div>
-        
+        <>
+      
+        </>
       </Layout>
       
     </>
