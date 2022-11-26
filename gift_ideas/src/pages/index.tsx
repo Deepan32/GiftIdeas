@@ -3,6 +3,7 @@ import Head from "next/head";
 import { trpc } from "../utils/trpc";
 import Layout from "../../components/Layout";
 import data from '../utils/data'
+import db from '../utils/db'
 import ProductItem from '../../components/ProductItem'
 const Home: NextPage = () => {
   const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
@@ -20,6 +21,12 @@ const Home: NextPage = () => {
       
     </>
   )
+
+   
 };
 
-export default Home;
+const ssp = async function getServerSideProps(){
+  await db.connect;
+  const product=await Product
+}
+export default [Home,ssp];
